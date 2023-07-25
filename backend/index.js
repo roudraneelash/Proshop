@@ -6,7 +6,9 @@ const cookieParser = require("cookie-parser");
 dotenv.config();
 
 const port = process.env.PORT;
-const db = require("./config/db");
+const connectDB = require("./config/db.js");
+
+connectDB();
 
 const app = express();
 //Body parser middleware
