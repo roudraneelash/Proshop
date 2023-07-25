@@ -5,7 +5,7 @@ const Products = require("../../model/productModel");
 module.exports.getProducts = async (req, res) => {
   try {
     // Pagination settings
-    const pageSize = 10; // Number of products to display per page
+    const pageSize = process.env.PAGINATION_LIMIT; // Number of products to display per page
     const page = Number(req.query.pageNumber) || 1; // Current page number (default: 1 if pageNumber not provided)
 
     const keyword = req.query.keyword
